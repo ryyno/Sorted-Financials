@@ -16,11 +16,18 @@
             color: #1A1A1A;
             line-height: 1.6;
         }
+        .site-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
         /* ---- NAV ---- */
         nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
             z-index: 100;
             display: flex;
             align-items: center;
@@ -620,7 +627,10 @@
         .nav-mobile {
             display: none;
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0; left: 50%;
+            transform: translateX(-50%) translateY(-100%);
+            width: 100%;
+            max-width: 1200px;
             z-index: 99;
             background: rgba(250, 250, 248, 0.97);
             backdrop-filter: blur(14px);
@@ -633,7 +643,7 @@
             transition: transform 0.3s ease;
         }
         .nav-mobile.open {
-            transform: translateY(0);
+            transform: translateX(-50%) translateY(0);
         }
         .nav-mobile li {
             list-style: none;
@@ -677,6 +687,7 @@
 </head>
 <body>
 
+<div class="site-wrap">
 <!-- NAV -->
 <nav>
     <a href="#" class="logo">Sorted <span>Financials</span></a>
@@ -920,7 +931,7 @@
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                     </span>
                 </button>
-                <div class="faq-answer">Yes &mdash; we have a CPA available to provide full tax preparation, consulting, and strategy for your business. One less thing to worry about at the end of the year.</div>
+                <div class="faq-answer">Tax preparation isn't something we offer directly, but clean, accurate books make tax time significantly easier for you and your accountant. We'll make sure everything is organized and ready to hand off so filing is as smooth as possible.</div>
             </div>
 
         </div>
@@ -1017,6 +1028,7 @@
         <li><a href="#contact">Contact</a></li>
     </ul>
 </footer>
+</div>
 
 <script>
     // FAQ accordion
