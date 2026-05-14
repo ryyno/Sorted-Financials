@@ -451,6 +451,62 @@
             padding-bottom: 1.5rem;
         }
 
+        /* ---- ABOUT ---- */
+        .about {
+            padding: 6rem 6%;
+            background: #F9FAFB;
+        }
+        .about-inner {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-photo-wrap {
+            position: relative;
+        }
+        .about-photo {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 16px;
+            display: block;
+        }
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .about-text .section-title {
+            margin-bottom: 0;
+        }
+        .about-text p {
+            font-size: 0.95rem;
+            color: #4B5563;
+            line-height: 1.8;
+        }
+        .about-cta {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.925rem;
+            font-weight: 600;
+            color: #2D6A4F;
+            text-decoration: none;
+            transition: gap 0.2s, color 0.2s;
+        }
+        .about-cta:hover { color: #1B4332; }
+
+        @media (max-width: 900px) {
+            .about-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .about-photo-wrap {
+                max-width: 220px;
+            }
+        }
+
         /* ---- CONTACT ---- */
         .contact {
             padding: 6rem 6%;
@@ -938,6 +994,23 @@
     </div>
 </section>
 
+<!-- ABOUT -->
+<section class="about">
+    <div class="about-inner">
+        <div class="about-photo-wrap">
+            <img src="ryan.png" alt="Ryan Noren — Sorted Financials" class="about-photo">
+        </div>
+        <div class="about-text">
+            <p class="section-label">About</p>
+            <h2 class="section-title">Hi, I'm Ryan.</h2>
+            <p>I started Sorted Financials because I believe small business owners deserve financial clarity without the confusion. You're great at what you do &mdash; running your business shouldn't mean drowning in spreadsheets, receipts, and reconciliations.</p>
+            <p>I work with small business owners across Canada to keep their books clean, their reports timely, and their stress low. Whether you're just getting started or your books have gotten away from you, I'll meet you where you're at and get things sorted.</p>
+            <p>When your numbers are accurate and up to date, you make better decisions &mdash; and that's exactly what I'm here to help with.</p>
+            <a href="#contact" class="about-cta">Let's talk &rarr;</a>
+        </div>
+    </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
     <div class="contact-inner">
@@ -983,24 +1056,24 @@
                 </div>
             </div>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" action="https://formspree.io/f/mrejzrbz" method="POST">
             <div class="form-row">
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" placeholder="Jane Smith" autocomplete="name">
+                    <input type="text" id="name" name="name" placeholder="Jane Smith" autocomplete="name">
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="jane@company.com" autocomplete="email">
+                    <input type="email" id="email" name="email" placeholder="jane@company.com" autocomplete="email">
                 </div>
             </div>
             <div class="form-group">
                 <label for="business">Business Name</label>
-                <input type="text" id="business" placeholder="Your Business LLC">
+                <input type="text" id="business" name="business" placeholder="Your Business LLC">
             </div>
             <div class="form-group">
                 <label for="plan">Plan Interest</label>
-                <select id="plan">
+                <select id="plan" name="plan">
                     <option value="" disabled selected>Select a plan...</option>
                     <option>Simple Start &mdash; $200/mo</option>
                     <option>Essentials &mdash; $300/mo</option>
@@ -1010,7 +1083,7 @@
             </div>
             <div class="form-group">
                 <label for="message">Tell us about your business</label>
-                <textarea id="message" placeholder="What industry are you in? Do your books need a cleanup? Anything else we should know?"></textarea>
+                <textarea id="message" name="message" placeholder="What industry are you in? Do your books need a cleanup? Anything else we should know?"></textarea>
             </div>
             <button type="submit" class="form-submit">Send Message</button>
         </form>
